@@ -3,7 +3,7 @@
 "use client";
 
 import { useState } from "react";
-import Html5QrcodePlugin from "@/components/Html5QrcodePlugin";
+import Html5QrcodePlugin from "@/Html5QrcodePlugin";
 
 export default function App() {
   const [decodedResults, setDecodedResults] = useState([]);
