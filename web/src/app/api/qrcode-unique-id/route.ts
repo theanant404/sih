@@ -1,7 +1,6 @@
 /** @format */
 
 import dbConnect from "@/db";
-import ComponentBatch from "@/models/ComponentsBatch.model";
 import QRCodeModel from "@/models/qrcode.mode";
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
