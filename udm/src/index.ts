@@ -51,7 +51,7 @@ if (majorNodeVersion >= 14) {
       // First, connect to the database
       await dbConnect();
       logger.info("Database connected successfully.");
-      // await generateAndSaveData();
+      // await generateAndSaveData(); // Uncomment if you want to generate test data on startup if your node version is 14 or above
       startServer();
     } catch (err) {
       logger.error("Failed to initialize the server:", err);
@@ -61,7 +61,7 @@ if (majorNodeVersion >= 14) {
   dbConnect()
     .then(() => {
       logger.info("Database connected successfully.");
-      // return generateAndSaveData();
+      // return generateAndSaveData(); // Uncomment if you want to generate test data on startup if your node version is less than 14
     })
     .then(() => {
       startServer();
