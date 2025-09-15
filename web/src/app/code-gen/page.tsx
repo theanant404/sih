@@ -166,7 +166,7 @@ export default function CodeManagementPage() {
         <button
             onClick={() => setActiveTab(tabName)}
             className={`px-6 py-3 text-lg font-medium rounded-t-lg transition-colors duration-200 focus:outline-none ${activeTab === tabName
-                ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-500'
+                ? 'bg-white dark:bg-slate-800 text-green-600 dark:text-green-400 border-b-2 border-green-500'
                 : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
                 }`}
         >
@@ -175,7 +175,7 @@ export default function CodeManagementPage() {
     );
 
     return (
-        <main className="flex flex-col items-center min-h-screen bg-slate-100 dark:bg-slate-900 p-4 font-sans text-slate-800 dark:text-slate-200">
+        <main className="flex flex-col items-center min-h-screen bg-slate-100 dark:bg-slate-900 p-4 mt-10 font-sans text-slate-800 dark:text-slate-200">
             <div className="w-full max-w-2xl mx-auto">
                 <header className="text-center my-8">
                     <h1 className="text-4xl md:text-5xl font-bold">Unique Code System</h1>
@@ -199,7 +199,7 @@ export default function CodeManagementPage() {
                                     </label>
                                     <input type="text" id="batchId" value={batchId} onChange={(e) => setBatchId(e.target.value)}
                                         placeholder="e.g., BATCH-FALL-2025"
-                                        className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                                        className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
                                 </div>
                                 <div>
                                     <label htmlFor="additionalData" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
@@ -207,12 +207,12 @@ export default function CodeManagementPage() {
                                     </label>
                                     <input type="text" id="additionalData" value={vendorCode} onChange={(e) => setVendorCode(e.target.value)}
                                         placeholder="e.g., a customer name or product ID"
-                                        className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                                        className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
                                 </div>
                             </div>
                             {generatorError && <p className="text-sm text-red-500 mt-4">{generatorError}</p>}
                             <button onClick={() => handleGenerate(batchId, vendorCode)} disabled={isGenerating}
-                                className="mt-6 w-full flex items-center justify-center bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-indigo-700 disabled:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150">
+                                className="mt-6 w-full flex items-center justify-center bg-green-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-green-700 disabled:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150">
                                 {isGenerating ? <Spinner /> : 'Generate & Save Code'}
                             </button>
                             {uniqueCode && (
@@ -220,10 +220,10 @@ export default function CodeManagementPage() {
                                     <div className="flex items-center justify-between gap-4">
                                         <div>
                                             <p className="text-sm text-slate-600 dark:text-slate-300 mb-1">Successfully Generated & Saved:</p>
-                                            <code className="text-xl font-mono text-indigo-600 dark:text-indigo-400 break-all">{uniqueCode}</code>
+                                            <code className="text-xl font-mono text-green-600 dark:text-green-400 break-all">{uniqueCode}</code>
                                         </div>
                                         <button onClick={handleCopyCode} title="Copy to clipboard"
-                                            className="p-2 text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                                            className="p-2 text-slate-500 hover:text-green-600 dark:hover:text-green-400 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition">
                                             {copySuccess ? <CheckCircleIcon className="w-6 h-6 text-green-500" /> : <CopyIcon className="w-6 h-6" />}
                                         </button>
                                     </div>
@@ -240,7 +240,7 @@ export default function CodeManagementPage() {
                                 </label>
                                 <input type="text" id="codeToVerify" value={codeToVerify} onChange={(e) => setCodeToVerify(e.target.value)}
                                     placeholder="Enter the 16-character code to verify"
-                                    className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                                    className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
                             </div>
                             {verifierError && <p className="text-sm text-red-500 mt-4">{verifierError}</p>}
                             <button onClick={handleVerify} disabled={isVerifying}
